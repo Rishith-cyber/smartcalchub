@@ -212,23 +212,22 @@ margin:8px;
 <script>
 function searchCalculators() {
 
-let input =
-document.getElementById("searchBox").value.toLowerCase();
+let input = document.getElementById("searchBox").value.toLowerCase();
+let cards = document.getElementsByClassName("card");
 
-let cards =
-document.getElementsByClassName("card");
+for(let i = 0; i < cards.length; i++){
 
-for(let i=0;i<cards.length;i++){
+let title = cards[i].querySelector("h3").innerText.toLowerCase();
 
-let title =
-cards[i].getElementsByTagName("h3")[0]
-.innerText.toLowerCase();
-
-if(title.includes(input)){
-cards[i].style.display="block";
+if(title.startsWith(input) || title.includes(input + " ")){
+cards[i].style.display = "block";
 }
 else{
-cards[i].style.display="none";
+cards[i].style.display = "none";
+}
+
+if(input === ""){
+cards[i].style.display = "block";
 }
 }
 }
