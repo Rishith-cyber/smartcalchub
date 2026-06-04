@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Length Converter - SmartCalc Hub</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+max-width:700px;
+margin:auto;
+padding:20px;
+background:#f4f7fb;
+}
+
+h1{
+color:#2563eb;
+}
+
+input, select{
+width:100%;
+padding:12px;
+margin:10px 0;
+font-size:16px;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+#result{
+margin-top:20px;
+padding:15px;
+background:white;
+border-radius:8px;
+font-size:20px;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Length Converter</h1>
+
+<label>Enter Value</label> <input type="number" id="value" placeholder="Example: 10">
+
+<label>From</label> <select id="fromUnit">
+
+<option value="meter">Meter</option>
+<option value="kilometer">Kilometer</option>
+<option value="centimeter">Centimeter</option>
+<option value="millimeter">Millimeter</option>
+<option value="inch">Inch</option>
+<option value="foot">Foot</option>
+</select>
+
+<label>To</label> <select id="toUnit">
+
+<option value="meter">Meter</option>
+<option value="kilometer">Kilometer</option>
+<option value="centimeter">Centimeter</option>
+<option value="millimeter">Millimeter</option>
+<option value="inch">Inch</option>
+<option value="foot">Foot</option>
+</select>
+
+<button onclick="convertLength()">Convert</button>
+
+<div id="result"></div>
+
+<script>
+function convertLength(){
+
+let value = parseFloat(document.getElementById("value").value);
+let from = document.getElementById("fromUnit").value;
+let to = document.getElementById("toUnit").value;
+
+let meters = value;
+
+if(from === "kilometer") meters = value * 1000;
+if(from === "centimeter") meters = value / 100;
+if(from === "millimeter") meters = value / 1000;
+if(from === "inch") meters = value * 0.0254;
+if(from === "foot") meters = value * 0.3048;
+
+let result = meters;
+
+if(to === "kilometer") result = meters / 1000;
+if(to === "centimeter") result = meters * 100;
+if(to === "millimeter") result = meters * 1000;
+if(to === "inch") result = meters / 0.0254;
+if(to === "foot") result = meters / 0.3048;
+
+document.getElementById("result").innerHTML =
+value + " " + from + " = " + result.toFixed(4) + " " + to;
+
+}
+</script>
+
+</body>
+</html>
