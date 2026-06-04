@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Age Calculator - SmartCalc Hub</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+max-width:700px;
+margin:auto;
+padding:20px;
+background:#f4f7fb;
+}
+
+h1{
+color:#2563eb;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+font-size:16px;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+#result{
+margin-top:20px;
+padding:15px;
+background:white;
+border-radius:8px;
+font-size:20px;
+font-weight:bold;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+</style>
+
+</head>
+<body>
+
+<h1>Age Calculator</h1>
+
+<label>Select Date of Birth</label> <input type="date" id="dob">
+
+<button onclick="calculateAge()">Calculate Age</button>
+
+<div id="result"></div>
+
+<script>
+function calculateAge(){
+
+let dob = new Date(document.getElementById("dob").value);
+let today = new Date();
+
+let years = today.getFullYear() - dob.getFullYear();
+let months = today.getMonth() - dob.getMonth();
+let days = today.getDate() - dob.getDate();
+
+if(days < 0){
+months--;
+days += 30;
+}
+
+if(months < 0){
+years--;
+months += 12;
+}
+
+document.getElementById("result").innerHTML =
+"Age: " + years + " Years, " +
+months + " Months, " +
+days + " Days";
+}
+</script>
+
+</body>
+</html>
