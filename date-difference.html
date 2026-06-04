@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Date Difference Calculator - SmartCalc Hub</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+max-width:700px;
+margin:auto;
+padding:20px;
+background:#f4f7fb;
+}
+
+h1{
+color:#2563eb;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+font-size:16px;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+#result{
+margin-top:20px;
+padding:15px;
+background:white;
+border-radius:8px;
+font-size:20px;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Date Difference Calculator</h1>
+
+<label>Start Date</label> <input type="date" id="startDate">
+
+<label>End Date</label> <input type="date" id="endDate">
+
+<button onclick="calculateDifference()">Calculate Difference</button>
+
+<div id="result"></div>
+
+<script>
+function calculateDifference(){
+
+let start = new Date(document.getElementById("startDate").value);
+let end = new Date(document.getElementById("endDate").value);
+
+let difference = end - start;
+
+let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+document.getElementById("result").innerHTML =
+"Difference: " + days + " days";
+
+}
+</script>
+
+</body>
+</html>
