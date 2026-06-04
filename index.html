@@ -21,22 +21,31 @@ background:#f4f7fb;
 header{
 background:#2563eb;
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
 }
 
-header h1{
-font-size:40px;
+nav{
+background:#1e40af;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
 }
 
 .search-box{
 text-align:center;
-margin:20px;
+margin:25px;
 }
 
 .search-box input{
 width:70%;
-padding:12px;
+padding:14px;
 border-radius:8px;
 border:1px solid #ccc;
 font-size:16px;
@@ -45,21 +54,21 @@ font-size:16px;
 .section-title{
 text-align:center;
 margin:20px;
-font-size:30px;
+font-size:32px;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
-padding:20px;
+padding:25px;
 }
 
 .card{
 background:white;
-padding:20px;
+padding:25px;
 border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 text-align:center;
 }
 
@@ -67,21 +76,40 @@ text-align:center;
 margin-bottom:10px;
 }
 
-.card button{
+.card p{
+margin-bottom:12px;
+}
+
+button{
 background:#2563eb;
 color:white;
 border:none;
-padding:10px 20px;
+padding:10px 22px;
 border-radius:6px;
 cursor:pointer;
 }
 
 footer{
-margin-top:40px;
 background:#222;
 color:white;
 text-align:center;
 padding:20px;
+margin-top:30px;
+}
+
+@media(max-width:600px){
+.search-box input{
+width:90%;
+}
+
+header h1{
+font-size:30px;
+}
+
+nav a{
+display:block;
+margin:8px;
+}
 }
 </style>
 
@@ -93,6 +121,12 @@ padding:20px;
 <h1>SmartCalc Hub</h1>
 <p>Free Online Calculators</p>
 </header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
 
 <div class="search-box">
 <input type="text" placeholder="Search calculators...">
@@ -146,7 +180,7 @@ padding:20px;
 
 <div class="card">
 <h3>Scientific Calculator</h3>
-<p>Advanced mathematical calculations.</p>
+<p>Advanced math calculations.</p>
 <a href="scientific.html"><button>Open</button></a>
 </div>
 
@@ -168,22 +202,10 @@ padding:20px;
 <a href="length-converter.html"><button>Open</button></a>
 </div>
 
-<div class="card">
-<h3>Weight Converter</h3>
-<p>Convert weight units.</p>
-<a href="weight-converter.html"><button>Open</button></a>
-</div>
-
-<div class="card">
-<h3>Temperature Converter</h3>
-<p>Convert temperatures.</p>
-<a href="temperature-converter.html"><button>Open</button></a>
-</div>
-
 </div>
 
 <footer>
-© 2026 SmartCalc Hub
+<p>© 2026 SmartCalc Hub</p>
 </footer>
 
 </body>
