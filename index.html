@@ -303,8 +303,9 @@ let cards = document.getElementsByClassName("card");
 for(let i = 0; i < cards.length; i++){
 
 let title = cards[i].querySelector("h3").innerText.toLowerCase();
+let description = cards[i].querySelector("p").innerText.toLowerCase();
 
-if(title.startsWith(input) || title.includes(input + " ")){
+if(title.includes(input) || description.includes(input)){
 cards[i].style.display = "block";
 }
 else{
@@ -314,6 +315,7 @@ cards[i].style.display = "none";
 if(input === ""){
 cards[i].style.display = "block";
 }
+
 }
 }
 </script>
