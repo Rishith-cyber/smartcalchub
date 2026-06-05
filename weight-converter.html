@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Weight Converter - SmartCalc Hub</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+max-width:700px;
+margin:auto;
+padding:20px;
+background:#f4f7fb;
+}
+
+h1{
+color:#2563eb;
+}
+
+input, select{
+width:100%;
+padding:12px;
+margin:10px 0;
+font-size:16px;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+#result{
+margin-top:20px;
+padding:15px;
+background:white;
+border-radius:8px;
+font-size:20px;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<a href="index.html">
+<button>Back to Home</button>
+</a>
+
+<h1>Weight Converter</h1>
+
+<label>Enter Value</label> <input type="number" id="value" placeholder="Example: 10">
+
+<label>From</label> <select id="fromUnit">
+
+<option value="kilogram">Kilogram</option>
+<option value="gram">Gram</option>
+<option value="pound">Pound</option>
+<option value="ounce">Ounce</option>
+<option value="ton">Ton</option>
+</select>
+
+<label>To</label> <select id="toUnit">
+
+<option value="kilogram">Kilogram</option>
+<option value="gram">Gram</option>
+<option value="pound">Pound</option>
+<option value="ounce">Ounce</option>
+<option value="ton">Ton</option>
+</select>
+
+<button onclick="convertWeight()">Convert</button>
+
+<div id="result"></div>
+
+<script>
+function convertWeight(){
+
+let value = parseFloat(document.getElementById("value").value);
+let from = document.getElementById("fromUnit").value;
+let to = document.getElementById("toUnit").value;
+
+let kg = value;
+
+if(from === "gram") kg = value / 1000;
+if(from === "pound") kg = value * 0.453592;
+if(from === "ounce") kg = value * 0.0283495;
+if(from === "ton") kg = value * 1000;
+
+let result = kg;
+
+if(to === "gram") result = kg * 1000;
+if(to === "pound") result = kg / 0.453592;
+if(to === "ounce") result = kg / 0.0283495;
+if(to === "ton") result = kg / 1000;
+
+document.getElementById("result").innerHTML =
+value + " " + from + " = " + result.toFixed(4) + " " + to;
+
+}
+</script>
+
+</body>
+</html>
