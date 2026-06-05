@@ -111,6 +111,27 @@ display:block;
 margin:8px;
 }
 }
+.dark-mode{
+background:#111827;
+color:white;
+}
+
+.dark-mode .card{
+background:#1f2937;
+color:white;
+}
+
+.dark-mode header{
+background:#111827;
+}
+
+.dark-mode nav{
+background:#000;
+}
+
+.dark-mode footer{
+background:#000;
+}
 </style>
 
 </head>
@@ -120,6 +141,8 @@ margin:8px;
 <header>
 <h1>📊 SmartCalc Hub</h1>
 <p>Your Free Online Calculator Collection</p>
+<br>
+<button onclick="toggleDarkMode()">🌙 Dark Mode</button>
 </header>
 
 <nav>
@@ -317,6 +340,9 @@ cards[i].style.display = "block";
 }
 
 }
+}
+function toggleDarkMode(){
+document.body.classList.toggle("dark-mode");
 }
 </script>
 </html>
