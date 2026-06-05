@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Calorie Calculator</title>
+</head>
+<body>
+
+<a href="index.html"><button>Back to Home</button></a>
+
+<h1>Calorie Calculator</h1>
+
+<input type="number" id="weight" placeholder="Weight (kg)">
+
+<button onclick="calculateCalories()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+
+function calculateCalories(){
+
+let weight =
+parseFloat(document.getElementById("weight").value);
+
+let calories =
+weight * 30;
+
+document.getElementById("result").innerHTML =
+"Estimated Maintenance Calories: "
++ calories.toFixed(0);
+
+}
+
+</script>
+
+</body>
+</html>
